@@ -1,10 +1,15 @@
 {
-    "user": "Roy",
-    "items": 
-    [
-        {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
-        {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
-        {"actions": "Collect Tickets", "done": true, "state": "Done"},
-        {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+    "users":[
+       {
+        "user": "Mely",
+        "project":"test",
+        "items": 
+        [
+            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
+            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
+            {"actions": "Collect Tickets", "done": true, "state": "Done"},
+            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+        ]
+       }
     ]
 }

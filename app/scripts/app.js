@@ -9,20 +9,16 @@
  *
  * Main module of the application.
  */
-angular.module('angular15App', ['ngAnimate','myAngularServices', 'ngResource','ngRoute','ngSanitize','ngTouch', 'myAngularDirectives', 'myAngularFilters'])
+angular.module('angular15App', ['ngAnimate','myAngularServices', 'ngResource','ngRoute','ngSanitize','ngTouch','ngStorage'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'TodoCtrl'
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/Day', {
-        templateUrl: 'views/day.html',
-        controller: 'DayCtrl'
+        templateUrl: 'views/main.html',
+        controller: 'ProjectCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -3,11 +3,10 @@
 
 angular.module('angular15App')
   //controller
-.controller("TodoCtrl", function ($scope, JsonService) {
+.controller("ListCtrl", function ($scope, JsonService) {
    var model = JsonService.getData();
    /*JsonService.getData(function(data){
         model = data;
-
     }); otra forma de hacerlo */
     console.log(model);
     $scope.showList = false;
@@ -99,14 +98,36 @@ angular.module('angular15App')
     //end save edit
     
     //function to order colums
-    $scope.myOrder = [];
-    $scope.orderBy = function (order) {
-        if (order === 'd') {
-            $scope.myOrder = $scope.todo.items[0].actions;
-            console.log($scope.myOrder);
-        }
+    $scope.myOrder = "-actions";
+    $scope.orderBy = function (id) {
+            if (id === "d") {
+                if ($scope.myOrder === "-actions") {
+                    $scope.myOrder = "actions";
+                } else {
+                    $scope.myOrder = "-actions";
+                }
+            } else {
+               if ($scope.myOrder === "-state") {
+                    $scope.myOrder = "state";
+                } else {
+                    $scope.myOrder = "-state";
+                } 
+            }
+            return  $scope.myOrder;
     }
+    //console.log($scope.orderBy())
     //end order
+});
+//end controller
+})();
+
+(function(){
+'use strict';
+
+angular.module('nombreDelModulo',[])
+//controller
+.controller("nombreDelControlador", function ($scope) {
+    //aqui las funciones q quiera usar
 });
 //end controller
 })();
