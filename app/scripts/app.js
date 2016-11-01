@@ -13,12 +13,16 @@ angular.module('angular15App', ['ngAnimate','myAngularServices', 'ngResource','n
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/list.html',
+        templateUrl: 'views/search.html',
+        controller: 'SearchProjectCtrl'
+      })
+      .when('/list', {
+        templateUrl: 'views/main.html',
         controller: 'ListCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/main.html',
-        controller: 'ProjectCtrl'
+      .when('/newProject', {
+        templateUrl: 'views/newProjectName.html',
+        controller: 'ProjectNameCtrl'
       })
       .otherwise({
         redirectTo: '/'

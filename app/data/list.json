@@ -1,14 +1,69 @@
 {
     "users":[
        {
-        "user": "Mely",
-        "project":"test",
-        "items": 
-        [
-            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
-            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
-            {"actions": "Collect Tickets", "done": true, "state": "Done"},
-            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+        "name": "mely",
+        "projects":[
+            {
+                "name" : "test",
+                "subteam" :[
+                    { 
+                        "name" : "Front-end",
+                        "items": 
+                        [
+                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
+                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                        ]
+                    },
+                    { 
+                        "name" : "Back-end",
+                        "items": 
+                        [
+                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
+                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "name" : "test1.1",
+                "subteam" :[
+                    { 
+                        "name" : "Front-end",
+                        "items": 
+                        [
+                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
+                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                        ]
+                    }
+                ]
+            }
+        
+        ]
+       },
+       {
+        "name": "roy",
+        "projects" :[
+            {
+                "name" : "test2",
+                "subteam" :[
+                    { 
+                        "name" : "Front-end",
+                        "items": 
+                        [
+                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
+                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                        ]
+                    }
+                ]
+            }
         ]
        }
     ]
