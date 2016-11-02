@@ -1,10 +1,10 @@
 (function(){
 'use strict';
 
-angular.module('angular15App')
+angular.module('myAngularApp')
   //controller
-.controller("ListCtrl", function ($scope, JsonService) {
-   var model = JsonService.getData();
+.controller("ListCtrl", function ($scope, $localStorage, JsonService) {
+   var model = $localStorage.prevListData;
    /*JsonService.getData(function(data){
         model = data;
     }); otra forma de hacerlo */
@@ -17,7 +17,7 @@ angular.module('angular15App')
         if (!name) {
                 $scope.validate = $scope.warningInput();
             } else {
-                $scope.todo.items.push(
+                $scope.todo.push(
                     {actions: name, done: false, state: 'Incomplete'}
                 );
                 $scope.validate = '';
@@ -29,7 +29,7 @@ angular.module('angular15App')
    //function to count pending tasks
     $scope.incompleteCount = function () {
         var count = 0;
-        angular.forEach($scope.todo.items, function (item) {
+        angular.forEach($scope.todo, function (item) {
             if (!item.done) {
                 count++;
             }
@@ -61,15 +61,17 @@ angular.module('angular15App')
         } else {
             state = 'Incomplete';
         }
-        $scope.todo.items[index].state = state;
+        $scope.todo[index].state = state;
+        $localStorage.prevListData = $scope.todo;
         
     };
     //end change state
     
     //function to delete tasks
     $scope.delete = function (index) {
-        console.log($scope.todo.items[index]);
-        $scope.todo.items.splice(index,1);
+        console.log($scope.todo[index]);
+        $scope.todo.splice(index,1);
+        $localStorage.prevListData = $scope.todo;
     };
     //end delete
     
@@ -78,7 +80,7 @@ angular.module('angular15App')
     $scope.edit = function (item) {
        $scope.tempEditInfo  = item.actions;
        $scope.tempState = item.done;
-        $scope.tempIndex = $scope.todo.items.map(function(e) { return e.actions; }).indexOf(item.actions);
+        $scope.tempIndex = $scope.todo.map(function(e) { return e.actions; }).indexOf(item.actions);
         //console.log( $scope.tempEditInfo);
         console.log( $scope.tempIndex);
     };
@@ -87,13 +89,14 @@ angular.module('angular15App')
     //function to save edited tasks info
     $scope.saveEdit = function () {
         console.log($scope.tempEditInfo);
-       $scope.todo.items[$scope.tempIndex].actions = $scope.tempEditInfo;
-       $scope.todo.items[$scope.tempIndex].done = $scope.tempState;
+       $scope.todo[$scope.tempIndex].actions = $scope.tempEditInfo;
+       $scope.todo[$scope.tempIndex].done = $scope.tempState;
        if ($scope.tempState) {
-           $scope.todo.items[$scope.tempIndex].state = 'Done';
+           $scope.todo[$scope.tempIndex].state = 'Done';
        } else {
-           $scope.todo.items[$scope.tempIndex].state = 'Incomplete';
+           $scope.todo[$scope.tempIndex].state = 'Incomplete';
        }
+       $localStorage.prevListData = $scope.todo;
     };
     //end save edit
     

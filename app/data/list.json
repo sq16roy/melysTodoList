@@ -1,7 +1,7 @@
 {
     "users":[
        {
-        "name": "mely",
+        "name": "br67016",
         "projects":[
             {
                 "name" : "test",
@@ -20,10 +20,10 @@
                         "name" : "Back-end",
                         "items": 
                         [
-                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
-                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
-                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
-                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                            {"actions": "Buy Flowers2", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes2", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets2", "done": true, "state": "Done"},
+                            {"actions": "Call Joe2", "done": false, "state": "Incomplete"}
                         ]
                     }
                 ]
@@ -35,10 +35,10 @@
                         "name" : "Front-end",
                         "items": 
                         [
-                            {"actions": "Buy Flowers", "done": false, "state": "Incomplete"},
-                            {"actions": "Get Shoes", "done": false, "state": "Incomplete"},
-                            {"actions": "Collect Tickets", "done": true, "state": "Done"},
-                            {"actions": "Call Joe", "done": false, "state": "Incomplete"}
+                            {"actions": "Buy Flowers3", "done": false, "state": "Incomplete"},
+                            {"actions": "Get Shoes3", "done": false, "state": "Incomplete"},
+                            {"actions": "Collect Tickets3", "done": true, "state": "Done"},
+                            {"actions": "Call Joe3", "done": false, "state": "Incomplete"}
                         ]
                     }
                 ]
@@ -47,7 +47,7 @@
         ]
        },
        {
-        "name": "roy",
+        "name": "rs25544",
         "projects" :[
             {
                 "name" : "test2",

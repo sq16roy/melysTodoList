@@ -11,22 +11,20 @@
             <div class="form-group col-xs-3" ng-if="showSelects">
                 <label for="sel1">Project Name:</label>
                 <select class="fomr-control" ng-model="selectedName" ng-change="showingSubTeamData(selectedName)">
-                    <option selected>---------</option>
-                    <option value="" ng-repeat="project in tempProjects">{{project.name}}</option>
+                    <option selected>Select one</option>
+                    <option ng-repeat="project in tempProjects" value="{{project.name}}">{{project.name}}</option>
                 </select>
             </div>
-            <div class="form-group col-xs-3" ng-if="showSelects">
+            <div class="form-group col-xs-3" ng-hide="tempSubTeam == '' || tempSubTeam == undefined">
                 <label for="sel1">SubTeam:</label>
                 <select class="form-control" id="subTeam" ng-model="subteam">
-                    <option selected>---------</option>
-                    <option ng-repeat="sub in tempSubTeam">{{sub}}</option>
-                    
+                    <option selected>Select one</option>
+                    <option ng-repeat="sub in tempSubTeam" value="{{sub}}">{{sub}}</option>
                 </select>
-                {{tempSubTeam}}
             </div>
         </div>
     </div>
     <div class="scdSbm">
-				<input type="submit" value="Submit" class="btn btn-success center-block">
+				<input type="submit" value="Submit" class="btn btn-success center-block" ng-if="subteam != 'Select one'" ng-click="searchList(selectedName, subteam)">
 			</div>
 </Section>

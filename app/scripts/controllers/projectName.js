@@ -7,7 +7,7 @@
  * # AboutCtrl
  * Controller of the angular15App
  */
-angular.module('angular15App')
+angular.module('myAngularApp')
   .controller('ProjectNameCtrl', function ($scope) {
    
   });

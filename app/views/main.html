@@ -1,7 +1,7 @@
 <div class="container">
     <div class="page-header">
         <h1>
-            {{todo.user}}'s To Do List
+            To Do List
             <span class="label label-default" ng-class="warningLevel()" ng-hide="incompleteCount() == 0">{{incompleteCount()}}</span>
         </h1>
     </div>
@@ -38,7 +38,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in todo.items | filter:userSearch | orderBy:myOrder track by $index">
+                <tr ng-repeat="item in todo | filter:userSearch  track by $index">
                     <td>{{item.actions}}</td>
                     <td>
                         <input type="checkbox" ng-model="item.done" ng-change="state(item.done, $index)">
@@ -83,7 +83,7 @@
         </table>
         <!--list-->
         <ol ng-if="showList === false">
-            <li ng-repeat="item in todo.items | filter:userSearch | orderBy:sortType:sortReverse track by $index">
+            <li ng-repeat="item in todo | filter:userSearch | orderBy:sortType:sortReverse track by $index">
                 {{item.actions}}
                 <span ng-if="item.done">(Done)</span>
             </li>
