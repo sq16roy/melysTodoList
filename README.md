@@ -8,7 +8,7 @@ version 0.11.1.
    Ruby: http://rubyinstaller.org/<br>
    Get compass :<br> 
         run in your folder path in cmd gem sources -a http://rubygems.org<br>
-        run in gem install compass<br>
+        run  gem install compass<br>
 ## install
 1- open the terminal<br>
 2- go to the folder cloned from git<br> 
