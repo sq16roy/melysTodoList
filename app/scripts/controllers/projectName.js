@@ -8,7 +8,7 @@
  * Controller of the angular15App
  */
 angular.module('myAngularApp')
-  .controller('ProjectNameCtrl', function ($scope, $localStorage, JsonService) {
+  .controller('ProjectNameCtrl', function ($scope, $localStorage, JsonService, $filter) {
     $scope.subteamNew = 'Select one';
     //load first data
     if (!$localStorage.prevPageData) {
@@ -20,11 +20,16 @@ angular.module('myAngularApp')
       console.log($scope.myUsers.users);
     }
     //function to show or hide inputs
-    $scope.showSubmit = function (selectedName) {
+    $scope.showSubmit = function () {
+      $scope.newUsername = $filter('lowercase')($scope.newUsername);
       if (!$scope.newUsername) {
         $scope.newProjectName = '';
         $scope.subteamNew = 'Select one';
       }
+    };
+    //function to Lowercase project name
+    $scope.toLowercaseName = function () {
+      $scope.newProjectName = $filter('lowercase')($scope.newProjectName);
     };
     //function to submit new projects
     $scope.submitNew = function (selectedName, selectedProjectName, selectedSub) {

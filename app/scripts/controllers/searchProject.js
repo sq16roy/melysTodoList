@@ -8,7 +8,7 @@
  * Controller of the angular15App
  */
 angular.module('myAngularApp')
-  .controller('SearchProjectCtrl', function ($scope, $location, $localStorage, JsonService) {
+  .controller('SearchProjectCtrl', function ($scope, $location, $localStorage, JsonService, $filter) {
     
     $scope.subteam = "Select one";
     $scope.selectedName = "Select one";
@@ -19,19 +19,16 @@ angular.module('myAngularApp')
     if (!$localStorage.prevPageData) {
       $localStorage.prevPageData = JsonService.getData();
       $scope.myUsers = $localStorage.prevPageData;
-      console.log($scope.myUsers);
     } else {
       $scope.myUsers = $localStorage.prevPageData;
-      console.log($scope.myUsers.users);
     }
 //function to show projects names
     $scope.showingData = function(selectedName){
      $scope.tempSubTeam = [];
+     $scope.myUserName = $filter('lowercase')($scope.myUserName);
      $scope.selectedName = "Select one";
-     console.log($scope.myUsers.users.length);
       for (var i = 0; i < $scope.myUsers.users.length ; i++) {
         if (selectedName === $scope.myUsers.users[i].name) {
-          console.log(selectedName);
           $scope.showSelects = true;
           $scope.tempProjects = $scope.myUsers.users[i].projects;
           break;
@@ -58,14 +55,12 @@ angular.module('myAngularApp')
 
     //function to search the filtered list
     $scope.searchList = function (selectedName,subTeam) {
-     console.log(selectedName+' '+ subTeam);
       for (var i = 0; i < $scope.tempProjects.length ; i++) {
         if (selectedName === $scope.tempProjects[i].name) {
           for (var x = 0; x < $scope.tempProjects[i].subteam.length; x++) {
               if (subTeam === $scope.tempProjects[i].subteam[x].name) {
                 $localStorage.prevListData = '';
                 $localStorage.prevListData = $scope.tempProjects[i].subteam[x].items;
-                console.log($localStorage.prevListData);
                 $location.path('/list');
               };
           };
