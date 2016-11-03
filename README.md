@@ -9,8 +9,10 @@ version 0.11.1.
 example:<br>
     cd documents<br>
     cd folder name<br>
-3- run the command npm install<br>
-4- run the command bower install<br>
+3- run the command npm install bower -g
+
+4- run the command npm install<br>
+5- run the command bower install<br>
 
 ## Build & development
 
