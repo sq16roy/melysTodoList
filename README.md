@@ -2,7 +2,13 @@
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.11.1.
-
+## dependensis
+   Git: https://git-scm.com/
+   node: https://nodejs.org/en/
+   Ruby: http://rubyinstaller.org/
+   Get compass : 
+        run in your folder path in cmd gem sources -a http://rubygems.org
+        run in gem install compass
 ## install
 1- open the terminal<br>
 2- go to the folder cloned from git<br> 
