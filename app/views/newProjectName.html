@@ -14,7 +14,7 @@
             </div>
             <div class="form-group col-xs-3" ng-hide="!newProjectName">
                 <label for="sel1">SubTeam:</label>
-                <select class="form-control" id="subTeam" ng-model="subteamNew">
+                <select class="form-control" id="subTeam" ng-model="subteamNew" ng-change="subTeamError = false">
                     <option selected>Select one</option>
                     <option value="Front-end">Front-end</option>
                     <option value="Back-end">Back-end</option>
@@ -22,8 +22,11 @@
                 </select>
             </div>
         </div>
+        <div class="scdSbm">
+            <input type="submit" value="Submit" class="btn btn-success center-block" ng-hide="subteamNew == 'Select one'" ng-click="submitNew(newUsername,newProjectName,subteamNew)">
+        </div>
     </div>
-    <div class="scdSbm">
-				<input type="submit" value="Submit" class="btn btn-success center-block" ng-hide="!newProjectName" ng-click="submitNew(newUsername,newProjectName,subteamNew)">
-			</div>
+    <div class="alert alert-danger" ng-show="subTeamError">
+        <strong>SubTeam!</strong> Already in use.
+    </div>
 </Section>
