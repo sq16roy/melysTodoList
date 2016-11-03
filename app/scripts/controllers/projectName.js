@@ -19,14 +19,14 @@ angular.module('myAngularApp')
       $scope.myUsers = $localStorage.prevPageData;
       console.log($scope.myUsers.users);
     }
-    
+    //function to show or hide inputs
     $scope.showSubmit = function (selectedName) {
       if (!$scope.newUsername) {
         $scope.newProjectName = '';
         $scope.subteamNew = 'Select one';
       }
     };
-
+    //function to submit new projects
     $scope.submitNew = function (selectedName, selectedProjectName, selectedSub) {
       if (testName(selectedName) != -1) {
         if (testProjectName(selectedName,selectedProjectName) != -1) {
@@ -82,7 +82,7 @@ angular.module('myAngularApp')
         $scope.subteamNew = 'Select one';
       };
     };
-
+    //function to validate if user name is already in use
     var testName = function (selectedName){
       var temCount = -1;
       var tempData = $localStorage.prevPageData.users.length;
@@ -94,7 +94,7 @@ angular.module('myAngularApp')
       };
       return temCount;
     };
-
+    //function to validate if the new project name is already in use
    var testProjectName = function (selectedName, selectedProjectName){
       var temCount = -1;
       var tempData = $localStorage.prevPageData.users[testName(selectedName)].projects.length;
@@ -106,7 +106,7 @@ angular.module('myAngularApp')
       };
       return temCount;
     };
-
+    //function to validate if the selected sub team name is already in use
     var testProjectSubName = function (selectedName, selectedProjectName, selectedSub){
       var temCount = -1;
       var tempData =  $localStorage.prevPageData.users[testName(selectedName)].projects[testProjectName(selectedName,selectedProjectName)].subteam.length;
